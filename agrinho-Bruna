@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho: Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Projeto Agrinho</h1>
+        <p class="subtitulo">Agro forte, futuro sustentável</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>O que é o Agro Sustentável?</h2>
+            <p>É a produção de alimentos e recursos de forma a proteger o meio ambiente, apoiar as comunidades e garantir que as futuras gerações também tenham recursos disponíveis.</p>
+        </section>
+
+        <section class="card">
+            <h2>Pilares do Futuro Verde</h2>
+            <ul>
+                <li>🌱 Preservação da água e do solo</li>
+                <li>🚜 Uso de tecnologias limpas no campo</li>
+                <li>🍎 Alimentos saudáveis e acessíveis</li>
+            </ul>
+        </section>
+
+        <button id="botao-dica">Descubra uma ação sustentável</button>
+        <p id="mensagem-dica" class="escondido"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido no VS Code para o Projeto Agrinho</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+const botao = document.getElementById('botao-dica');
+const mensagem = document.getElementById('mensagem-dica');
+
+const dicas = [
+    "💡 A rotação de culturas mantém o solo fértil sem precisar de tantos produtos químicos!",
+    "💡 O uso de drones ajuda a identificar pragas exatas, economizando água e recursos.",
+    "💡 Plantar árvores perto das plantações protege o solo contra o vento e a erosão.",
+    "💡 A captação da água da chuva no campo ajuda a irrigar a lavoura de forma econômica!"
+];
+
+botao.addEventListener('click', () => {
+    // Sorteia uma dica da lista acima
+    const dicaAleatoria = dicas[Math.floor(Math.random() * dicas.length)];
+    
+    // Mostra a dica na tela e remove a classe que a escondia
+    mensagem.textContent = dicaAleatoria;
+    mensagem.classList.remove('escondido');
+});
